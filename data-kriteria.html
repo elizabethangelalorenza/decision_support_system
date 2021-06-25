@@ -35,9 +35,9 @@
                             <b class="logo-icon">
                                 <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                             </b>
-                            <b class="logo-text">
+                            <span class="logo-text">
                                 <img src="assets/images/yasmiba.png" alt="homepage" class="dark-logo" />
-                            </b>
+                            </span>
                         </a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         <!-- User profile -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="assets/images/admin.png" alt="user" class="rounded-circle" width="40">
+                                <img src="assets/images/admin.png" alt="user" class="rounded-circle" width="50">
                                 <span class="text-dark ml-2 d-none d-lg-inline-block"><span>Admin </span>
                                 <i data-feather="chevron-down" class="svg-icon"></i>
                             </a>
@@ -102,9 +102,9 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="data-alternatif.html" aria-expanded="false">
+                            <a class="sidebar-link sidebar-link" href="data-penilaian.html" aria-expanded="false">
                                 <i data-feather="grid" class="feather-icon"></i>
-                                <span class="hide-menu">Laporan Hasil Tes</span>
+                                <span class="hide-menu">Data Penilaian</span>
                             </a>
                         </li>
                     </ul>
@@ -132,51 +132,20 @@
                 <!-- ============================================================== -->
                 <!-- basic table -->
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-body text-center">
-                                <h3 class="card-title">Tambah Kriteria</h3><br>
-                                <form action="#">
-                                    <div class="form-body">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Nama Kriteria">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Jenis Kriteria">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Bobot">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <div class="text-center">
-                                            <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Save" onclick="return confirm('Apakah anda yakin ingin menyimpan?')">Simpan</button>
-                                            <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Cancel" onclick="return confirm('Apakah anda yakin ingin membatalkan?')">Batal</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="card-title">Tabel Data Kriteria</h3><br>
+                                <!-- <h3 class="card-title text-center"> </h3> -->
+                                <!-- <br> -->
+                                <h1>
+                                    <a href="index.php?url=data_kriteria_tambah" class="btn btn-md btn-success">
+                                        <i class="fa icon-printer"></i> Cetak Laporan</a>
+                                    <a href="index.php?url=data_kriteria_tambah" class="btn btn-md btn-success" style="float: right;">
+                                        <i class="fa fa-plus"></i> Tambah</a>
+                                </h1><br>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered no-wrap">
-                                        <thead>
+                                    <table id="zero_config" class="table text-center table-bordered no-wrap">
+                                        <thead class="bg-primary text-white">
                                             <tr>
                                                 <th width="2px">No. </th>
                                                 <th width="10px">Nama Kriteria</th>
@@ -192,8 +161,8 @@
                                                 <td>Benefit</td>
                                                 <td>0,5</td>
                                                 <td>
-                                                    <a href="#" type="button" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</a>
-                                                    <a href="#" type="button" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</a>
+                                                    <button type="submit" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</button>
+                                                    <button type="submit" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -202,8 +171,8 @@
                                                 <td>Benefit</td>
                                                 <td>0,15</td>
                                                 <td>
-                                                    <a href="#" type="button" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</a>
-                                                    <a href="#" type="button" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</a>
+                                                    <button type="submit" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</button>
+                                                    <button type="submit" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -212,18 +181,18 @@
                                                 <td>Benefit</td>
                                                 <td>0,15</td>
                                                 <td>
-                                                    <a href="#" type="button" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</a>
-                                                    <a href="#" type="button" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</a>
+                                                    <button type="submit" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</button>
+                                                    <button type="submit" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
-                                                <td>Nilai Membaca Al-Qur’an</td>
+                                                <td>Nilai Membaca Al-Qur'an</td>
                                                 <td>Benefit</td>
                                                 <td>0,1</td>
                                                 <td>
-                                                    <a href="#" type="button" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</a>
-                                                    <a href="#" type="button" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</a>
+                                                    <button type="submit" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</button>
+                                                    <button type="submit" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -232,8 +201,8 @@
                                                 <td>Benefit</td>
                                                 <td>0,1</td>
                                                 <td>
-                                                    <a href="#" type="button" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</a>
-                                                    <a href="#" type="button" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</a>
+                                                    <button type="submit" class="btn btn-warning btn-rounded" title="Edit" onclick="return confirm('Apakah anda yakin ingin mengedit?')"><i class="far icon-pencil"></i> Edit</button>
+                                                    <button type="submit" class="btn btn-danger btn-rounded" title="Hapus" onclick="return confirm('Apakah anda yakin ingin menghapus?')"><i class="far icon-trash"></i> Hapus</button>
                                                 </td>
                                             </tr>
                                         </tbody>
