@@ -1,19 +1,20 @@
 <?php
-include "config/config.php";
-session_start();
-if(!isset($_SESSION['user'])) {
-     echo "<script>window.location='login.php';</script>";
-}
+    include("pages/koneksi.php");
+    session_start();
+    if(!isset($_SESSION['user']))
+    {
+        echo "<script>window.location='login.php';</script>";
+    }
 ?>
+<!-- ================================================== -->
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Yasmiba">
+    <meta name="author" content="Yasmiba">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>SPK Miftahussalam Banyumas</title>
     <link href="assets/extra-libs/c3/c3.min.css" rel="stylesheet">
@@ -22,7 +23,7 @@ if(!isset($_SESSION['user'])) {
     <link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="assets/dist/css/style.min.css" rel="stylesheet">
 </head>
-
+<!-- ================================================== -->
 <body>
     <div class="preloader">
         <div class="lds-ripple">
@@ -49,19 +50,19 @@ if(!isset($_SESSION['user'])) {
                     <ul class="navbar-nav float-left mr-auto ml-3 pl-1"></ul>
                     <ul class="navbar-nav float-right">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="assets/images/admin.png" alt="user" class="rounded-circle" width="50">
-                                <span class="text-dark ml-2 d-none d-lg-inline-block"><span>Admin </span>
+                                    <span class="text-dark ml-2 d-none d-lg-inline-block"><span>Admin</span>
                                 <i data-feather="chevron-down" class="svg-icon"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a class="dropdown-item" href="#">
+                                <a href="user/profil.php" class="dropdown-item">
                                     <i data-feather="user" class="svg-icon mr-2 ml-1"></i>Profil</a>
-                                <a class="dropdown-item" href="#">
+                                <a href="user/data.php" class="dropdown-item">
                                     <i data-feather="user" class="svg-icon mr-2 ml-1"></i>Data Admin</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="logout.php">
-                                    <i data-feather="power" class="svg-icon mr-2 ml-1"></i>Logout</a>
+                                <a href="logout.php" class="dropdown-item" onclick="return confirm ('Apakah anda yakin ingin keluar?')">
+                                    <i data-feather="power" class="svg-icon mr-2 ml-1"></i>Keluar</a>
                             </div>
                         </li>
                     </ul>
@@ -73,38 +74,38 @@ if(!isset($_SESSION['user'])) {
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="index.php" aria-expanded="false">
+                            <a href="index.php" class="sidebar-link sidebar-link" aria-expanded="false">
                                 <i data-feather="home" class="feather-icon"></i>
-                                <span class="hide-menu">Dashboard</span>
+                                <span class="hide-menu">Beranda</span>
                             </a>
                         </li>
                         <li class="list-divider"></li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="data-kriteria.php" aria-expanded="false">
+                            <a href="kriteria/data.php" class="sidebar-link sidebar-link" aria-expanded="false">
                                 <i data-feather="grid" class="feather-icon"></i>
                                 <span class="hide-menu">Data Kriteria</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="data-parameter.php" aria-expanded="false">
-                                <i data-feather="grid" class="feather-icon"></i>
-                                <span class="hide-menu">Data Parameter</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="data-alternatif.php" aria-expanded="false">
+                            <a href="santri/data.php" class="sidebar-link sidebar-link" aria-expanded="false">
                                 <i data-feather="grid" class="feather-icon"></i>
                                 <span class="hide-menu">Data Santri</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="data-penilaian.php" aria-expanded="false">
+                            <a href="penilaian/data.php" class="sidebar-link sidebar-link" aria-expanded="false">
                                 <i data-feather="grid" class="feather-icon"></i>
                                 <span class="hide-menu">Data Penilaian</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="hasil/data.php" class="sidebar-link sidebar-link" aria-expanded="false">
+                                <i data-feather="grid" class="feather-icon"></i>
+                                <span class="hide-menu">Hasil Perhitungan</span>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </aside>
-        <!-- ============================================================== -->
+        <!-- ================================================== -->
