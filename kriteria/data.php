@@ -14,8 +14,6 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-right">
-                                    <a href="#" class="btn btn-success" type="button" style="float: left;">
-                                        <i class="fas fa-print"></i> Cetak Laporan</a>
                                     <a href="tambah.php" class="btn btn-success" type="button">
                                         <i class="fas fa-plus"></i> Tambah</a>
                                 </div><br>
@@ -23,12 +21,11 @@
                                     <table id="zero_config" class="table text-center table-bordered no-wrap">
                                         <thead class="bg-primary text-white">
                                             <tr>
-                                                <th width="2px">No. </th>
-                                                <th>Nama Kriteria</th>
+                                                <th width="2px">No.</th>
+                                                <th width="2px">Nama Kriteria</th>
                                                 <th width="2px">Kode</th>
-                                                <th width="2px">Jenis Kriteria</th>
-                                                <th width="2px">Bobot</th>
-                                                <th width="2px">Persentase ( % )</th>
+                                                <th width="2px">Jenis</th>
+                                                <th width="2px">Bobot</th> 
                                                 <th width="2px"> </th>
                                             </tr>
                                         </thead>
@@ -45,7 +42,6 @@
                                             <td><?= $data["kode_kriteria"]; ?></td>
                                             <td><?= $data["jenis_kriteria"]; ?></td>
                                             <td><?= $data["bobot_kriteria"]; ?></td>
-                                            <td><?= $data["bobot_persentase"]; ?></td>
                                             <td>
                                                 <a href="edit.php?id=<?=$data['id_kriteria']?>" type="button" class="btn btn-sm btn-warning">
                                                     <i class="fas fa-edit"></i> Edit</a>

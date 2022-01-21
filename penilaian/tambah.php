@@ -15,78 +15,44 @@
                             <div class="card-header bg-primary">
                                 <h3 class="mb-0 text-white">Form Penilaian</h3>
                             </div>
-                            <form action="" method="post">
+                            <form action="insert.php" method="post">
                                 <div class="card-body">
-                                    <div class="form-group">
-                                        <h4>
-                                            <label class="card-title">ID Santri</label>
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" name="id" placeholder="ID Santri" required autofocus>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="form-group">
                                         <h4>
                                             <label class="card-title">Nama Santri</label>
                                         </h4>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <input class="form-control" type="text" name="nama" placeholder="Nama Santri" required autofocus>
+                                                <select class="form-control form-control-sm" name="nama" required autofocus>
+                                                    <option>Pilih Nama Santri</option>
+                                                    <?php
+                                                    $query = "SELECT * FROM santri";
+                                                    $tampil = mysqli_query($koneksi, $query);
+                                                    while ($data = mysqli_fetch_assoc($tampil)) :
+                                                        echo '<option value=' . $data["id_santri"] . '>' . $data["nama_santri"] . '</option>';
+                                                    endwhile;
+                                                    ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <h4>
-                                            <label class="card-title">Kriteria: Rata-rata Nilai Tes Masuk Tertulis (K1)</label>
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" name="k1" placeholder=" " required autofocus>
+                                    <?php
+                                    $query = "SELECT * FROM kriteria";
+                                    $tampil = mysqli_query($koneksi, $query);
+                                    while ($data = mysqli_fetch_assoc($tampil)) :
+                                    ?>
+                                        <div class="form-group">
+                                            <h4>
+                                                <label class="card-title">Kriteria: <?= $data["nama_kriteria"]; ?> (<?= $data["kode_kriteria"]; ?>)</label>
+                                            </h4>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input class="form-control" type="text" name="nilai_<?= strtolower($data["kode_kriteria"]); ?>" placeholder=" " required autofocus>
+                                                    <input type="hidden" name="<?= strtolower($data["kode_kriteria"]); ?>" value="<?= $data["id_kriteria"]; ?>">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <h4>
-                                            <label class="card-title">Kriteria: Rata-rata Nilai Ujian Nasional (K2)</label>
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" name="k2" placeholder=" " required autofocus>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <h4>
-                                            <label class="card-title">Kriteria: Rata-rata Nilai Rapot Kelas (K3)</label>
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" name="k3" placeholder=" " required autofocus>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <h4>
-                                            <label class="card-title">Kriteria: Nilai Membaca Al-Qur'an (K4)</label>
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" name="k4" placeholder=" " required autofocus>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <h4>
-                                            <label class="card-title">Kriteria: Nilai Wawancara Kepribadian (K5)</label>
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" name="k5" placeholder=" " required autofocus>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endwhile; ?>
                                     <div class="form-actions">
                                         <div class="text-right">
                                             <button class="btn btn-success" type="submit" name="simpan" style="float: left;">
@@ -99,22 +65,9 @@
                                     </div>
                                 </div>
                             </form>
-                            <?php
-                            if(isset($_POST['simpan']))
-                            {
-                                $query = "INSERT INTO nilai (id_santri, nama_santri, k1, k2, k3, k4, k5)
-                                          VALUES ('$_POST[id]', '$_POST[nama]', '$_POST[k1]', '$_POST[k2]', '$_POST[k3]', '$_POST[k4]', '$_POST[k5]')";
-                                $simpan = mysqli_query($koneksi, $query);
-                                if($simpan)
-                                {
-                                    echo "<script>alert('Simpan data sukses!');
-                                    window.location='data.php';</script>";
-                                }
-                            }
-                            ?>
                         </div>
                     </div>
                 </div>
             </div>
-        <!-- ================================================== -->
-        <?php include("pages/footer.php"); ?>
+            <!-- ================================================== -->
+            <?php include("pages/footer.php"); ?>

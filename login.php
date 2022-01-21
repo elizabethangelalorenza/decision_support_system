@@ -1,8 +1,7 @@
 <?php
     include("pages/koneksi.php");
     session_start();
-    if(isset($_SESSION['user']))
-    {
+    if(isset($_SESSION['user'])) {
         echo "<script>window.location='index.php';</script>";
     }
 ?>
@@ -16,8 +15,8 @@
     <meta name="description" content="SPK Miftahussalam Banyumas">
     <meta name="author" content="SPK Miftahussalam Banyumas">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>SPK Miftahussalam Banyumas</title>
     <link href="assets/dist/css/style.min.css" rel="stylesheet">
+    <title>SPK Miftahussalam Banyumas</title>
 </head>
 <!-- ================================================== -->
 <body>
@@ -101,8 +100,7 @@
                                     $password = md5($_POST['password']);
                                     $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
                                     $hasil = mysqli_query($koneksi, $query);
-                                    if(mysqli_num_rows($hasil) > 0)
-                                    {
+                                    if(mysqli_num_rows($hasil) > 0) {
                                         $_SESSION['user'] = $username;
                                         echo "<script>window.location='index.php';</script>";
                                     } else {
@@ -120,8 +118,7 @@
                                     $query = "INSERT INTO user (nama, username, password)
                                               VALUES ('$nama', '$username', '$password')";
                                     $register = mysqli_query($koneksi, $query);
-                                    if($register > 0)
-                                    {
+                                    if($register > 0) {
                                         echo "<script>alert('Registrasi sukses!');
                                         window.location='login.php';</script>";
                                     } else {

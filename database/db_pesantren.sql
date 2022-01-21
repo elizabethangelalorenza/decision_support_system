@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2021 at 02:14 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.4.20
+-- Generation Time: Jan 21, 2022 at 09:11 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,29 +28,38 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `kriteria` (
-  `id_kriteria` int(3) NOT NULL,
+  `id_kriteria` int(5) NOT NULL,
   `nama_kriteria` varchar(100) NOT NULL,
   `kode_kriteria` varchar(5) NOT NULL,
   `jenis_kriteria` varchar(30) NOT NULL,
-  `bobot_kriteria` varchar(5) NOT NULL,
-  `bobot_persentase` varchar(5) NOT NULL
+  `bobot_kriteria` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nilai`
+-- Table structure for table `nilai_normalisasi_alternatif`
 --
 
-CREATE TABLE `nilai` (
-  `id_nilai` int(3) NOT NULL,
-  `id_santri` int(3) NOT NULL,
-  `nama_santri` varchar(100) NOT NULL,
-  `k1` varchar(10) NOT NULL,
-  `k2` varchar(10) NOT NULL,
-  `k3` varchar(10) NOT NULL,
-  `k4` varchar(10) NOT NULL,
-  `k5` varchar(10) NOT NULL
+CREATE TABLE `nilai_normalisasi_alternatif` (
+  `id_nilai_normalisasi` int(11) NOT NULL,
+  `id_kriteria` int(11) NOT NULL,
+  `id_santri` int(11) NOT NULL,
+  `nilai_alternatif` int(11) NOT NULL,
+  `nilai_normalisasi` float NOT NULL,
+  `nilai_normalisasi_terbobot` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nilai_preferensi_alternatif`
+--
+
+CREATE TABLE `nilai_preferensi_alternatif` (
+  `id_nilai_preferensi` int(11) NOT NULL,
+  `id_santri` int(11) NOT NULL,
+  `nilai_preferensi` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -91,10 +100,16 @@ ALTER TABLE `kriteria`
   ADD PRIMARY KEY (`id_kriteria`);
 
 --
--- Indexes for table `nilai`
+-- Indexes for table `nilai_normalisasi_alternatif`
 --
-ALTER TABLE `nilai`
-  ADD PRIMARY KEY (`id_nilai`);
+ALTER TABLE `nilai_normalisasi_alternatif`
+  ADD PRIMARY KEY (`id_nilai_normalisasi`);
+
+--
+-- Indexes for table `nilai_preferensi_alternatif`
+--
+ALTER TABLE `nilai_preferensi_alternatif`
+  ADD PRIMARY KEY (`id_nilai_preferensi`);
 
 --
 -- Indexes for table `santri`
@@ -116,13 +131,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `kriteria`
 --
 ALTER TABLE `kriteria`
-  MODIFY `id_kriteria` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kriteria` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `nilai`
+-- AUTO_INCREMENT for table `nilai_normalisasi_alternatif`
 --
-ALTER TABLE `nilai`
-  MODIFY `id_nilai` int(3) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `nilai_normalisasi_alternatif`
+  MODIFY `id_nilai_normalisasi` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `nilai_preferensi_alternatif`
+--
+ALTER TABLE `nilai_preferensi_alternatif`
+  MODIFY `id_nilai_preferensi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `santri`

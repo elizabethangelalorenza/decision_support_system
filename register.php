@@ -1,10 +1,5 @@
-<?php
-    include "config/config.php";
-?>
-<!-- ================================================== -->
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +7,10 @@
     <meta name="description" content="SPK Miftahussalam Banyumas">
     <meta name="author" content="SPK Miftahussalam Banyumas">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>SPK Miftahussalam Banyumas</title>
     <link href="assets/dist/css/style.min.css" rel="stylesheet">
+    <title>SPK Miftahussalam Banyumas</title>
 </head>
-
+<!-- ================================================== -->
 <body>
     <div class="main-wrapper">
         <div class="auth-wrapper d-flex justify-content-center align-items-center position-relative"
@@ -62,8 +57,7 @@
 
                         $register = mysqli_query($koneksi, $query);
                         
-                        if($register > 0)
-                        {
+                        if($register > 0) {
                             echo "<script>alert('Registrasi sukses!');
                             window.location='login.php';</script>";
                         } else {
@@ -82,4 +76,5 @@
         $(".preloader ").fadeOut();
     </script>
 </body>
+<!-- ================================================== -->
 </html>

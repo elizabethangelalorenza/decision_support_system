@@ -56,16 +56,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <h4>
-                                            <label class="card-title">Persentase</label>
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" name="persentase" placeholder="Persentase" required autofocus>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="form-actions">
                                         <div class="text-right">
                                             <button class="btn btn-success" type="submit" name="simpan" style="float: left;">
@@ -81,11 +71,10 @@
                             <?php
                             if(isset($_POST['simpan']))
                             {
-                                $query = "INSERT INTO kriteria (nama_kriteria, kode_kriteria, jenis_kriteria, bobot_kriteria, bobot_persentase)
-                                          VALUES ('$_POST[nama]', '$_POST[kode]', '$_POST[jenis]', '$_POST[bobot]', '$_POST[persentase]')";
+                                $query = "INSERT INTO kriteria (nama_kriteria, kode_kriteria, jenis_kriteria, bobot_kriteria)
+                                          VALUES ('$_POST[nama]', '$_POST[kode]', '$_POST[jenis]', '$_POST[bobot]')";
                                 $simpan = mysqli_query($koneksi, $query);
-                                if($simpan)
-                                {
+                                if($simpan) {
                                     echo "<script>alert('Simpan data sukses!');
                                     window.location='data.php';</script>";
                                 }

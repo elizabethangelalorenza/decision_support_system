@@ -1,14 +1,14 @@
 <?php
     include("../pages/koneksi.php");
     session_start();
-    if(!isset($_SESSION['user']))
-    {
-        echo "<script>window.location='login.php';</script>";
+    if (!isset($_SESSION['user'])) {
+        echo "<script>window.location='../login.php';</script>";
     }
 ?>
 <!-- ================================================== -->
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,14 +16,15 @@
     <meta name="description" content="Yasmiba">
     <meta name="author" content="Yasmiba">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>SPK Miftahussalam Banyumas</title>
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="../assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="../assets/dist/css/style.min.css" rel="stylesheet">
+    <title>SPK Miftahussalam Banyumas</title>
 </head>
 <!-- ================================================== -->
+
 <body>
     <div class="preloader">
         <div class="lds-ripple">
@@ -52,15 +53,10 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="../assets/images/admin.png" alt="user" class="rounded-circle" width="50">
-                                    <span class="text-dark ml-2 d-none d-lg-inline-block"><span>Admin</span>
-                                <i data-feather="chevron-down" class="svg-icon"></i>
+                                <span class="text-dark ml-2 d-none d-lg-inline-block"><span>Admin</span>
+                                    <i data-feather="chevron-down" class="svg-icon"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a href="../user/profil.php" class="dropdown-item">
-                                    <i data-feather="user" class="svg-icon mr-2 ml-1"></i>Profil</a>
-                                <a href="../user/data.php" class="dropdown-item">
-                                    <i data-feather="user" class="svg-icon mr-2 ml-1"></i>Data Admin</a>
-                                <div class="dropdown-divider"></div>
                                 <a href="../logout.php" class="dropdown-item" onclick="return confirm ('Apakah anda yakin ingin keluar?')">
                                     <i data-feather="power" class="svg-icon mr-2 ml-1"></i>Keluar</a>
                             </div>
@@ -99,9 +95,21 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="data.php" class="sidebar-link sidebar-link" aria-expanded="false">
+                            <a href="../normalisasi/data.php" class="sidebar-link sidebar-link" aria-expanded="false">
                                 <i data-feather="grid" class="feather-icon"></i>
-                                <span class="hide-menu">Hasil Perhitungan</span>
+                                <span class="hide-menu">Hasil Normalisasi (R)</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../normalisasi_terbobot/data.php" class="sidebar-link sidebar-link" aria-expanded="false">
+                                <i data-feather="grid" class="feather-icon"></i>
+                                <span class="hide-menu">Hasil Normalisasi (R x W)</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../nilai_preferensi/data.php" class="sidebar-link sidebar-link" aria-expanded="false">
+                                <i data-feather="grid" class="feather-icon"></i>
+                                <span class="hide-menu">Hasil Preferensi Alternatif</span>
                             </a>
                         </li>
                     </ul>

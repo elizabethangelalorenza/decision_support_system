@@ -51,7 +51,7 @@
                                             <option disabled=""></option>
                                             <option>Cost</option>
                                             <option>Benefit</option>
-                                        </select>   
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <h4>
@@ -60,16 +60,6 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <input class="form-control" type="text" name="bobot" placeholder="Bobot Kriteria" value="<?php echo "$data[bobot_kriteria]"; ?>" required autofocus>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <h4>
-                                            <label class="card-title">Persentase</label>
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input class="form-control" type="text" name="persentase" placeholder="Persentase" value="<?php echo "$data[bobot_persentase]"; ?>" required autofocus>
                                             </div>
                                         </div>
                                     </div>
@@ -90,13 +80,11 @@
                                             nama_kriteria='$_POST[nama]',
                                             kode_kriteria='$_POST[kode]',
                                             jenis_kriteria='$_POST[jenis]',
-                                            bobot_kriteria='$_POST[bobot]',
-                                            bobot_persentase='$_POST[persentase]'
+                                            bobot_kriteria='$_POST[bobot]'
                                           WHERE id_kriteria='$_GET[id]'";
                                 $edit = mysqli_query($koneksi, $query);
-                                if($edit)
-                                {
-                                    echo "<script>alert('Edit data sukses!');
+                                if($edit) {
+                                    echo "<script>alert('Edit data sukses!'); 
                                     window.location='data.php';</script>";
                                 }
                             }

@@ -14,8 +14,6 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="text-right">
-                                    <a href="#" class="btn btn-success" type="button" style="float: left;">
-                                        <i class="fas fa-print"></i> Cetak Laporan</a>
                                     <a href="tambah.php" class="btn btn-success" type="button">
                                         <i class="fas fa-plus"></i> Tambah</a>
                                 </div><br>
@@ -24,7 +22,7 @@
                                         <thead class="bg-primary text-white">
                                             <tr>
                                                 <th width="2px">No. </th>
-                                                <th>Nama Santri</th>
+                                                <th width="2px">Nama Santri</th>
                                                 <th width="2px">Jenis Kelamin</th>
                                                 <th width="2px">Asal Sekolah</th>
                                                 <th width="2px">Alamat</th>
