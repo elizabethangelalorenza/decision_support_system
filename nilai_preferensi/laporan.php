@@ -37,13 +37,13 @@
             <table class="table text-center table-bordered">
                 <thead>
                     <tr>
-                        <th style="width:10%;">Ranking</th>
-                        <th style="width:20%;">Nama Santri</th>
-                        <th style="width:20%;">Kriteria</th>
-                        <th style="width:20%;">Alternatif</th>
-                        <th style="width:20%;">Normalisasi</th>
-                        <th style="width:20%;">Normalisasi Terbobot</th>
-                        <th style="width:20%;">Preferensi</th>
+                        <th style="width:5%;">Ranking</th>
+                        <th style="width:30%;">Nama Santri</th>
+                        <th style="width:10%;">Kode Kriteria</th>
+                        <th style="width:15%;">Nilai Santri</th>
+                        <th style="width:15%;">Normalisasi</th>
+                        <th style="width:15%;">Normalisasi Terbobot</th>
+                        <th style="width:10%;">Nilai Preferensi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,7 +107,6 @@
                     <?php
                         $no++;
                     endwhile;
-
                     ?>
                 </tbody>
             </table>

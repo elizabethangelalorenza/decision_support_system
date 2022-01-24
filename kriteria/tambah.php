@@ -69,9 +69,8 @@
                                 </div>
                             </form>
                             <?php
-                            if(isset($_POST['simpan']))
-                            {
-                                $query = "INSERT INTO kriteria (nama_kriteria, kode_kriteria, jenis_kriteria, bobot_kriteria)
+                            if(isset($_POST['simpan'])) {
+                                $query  = "INSERT INTO kriteria (nama_kriteria, kode_kriteria, jenis_kriteria, bobot_kriteria)
                                           VALUES ('$_POST[nama]', '$_POST[kode]', '$_POST[jenis]', '$_POST[bobot]')";
                                 $simpan = mysqli_query($koneksi, $query);
                                 if($simpan) {

@@ -21,13 +21,13 @@
                                     <table id="zero_config" class="table text-center table-bordered no-wrap" style="width: 100%">
                                         <thead class="bg-primary text-white">
                                             <tr>
-                                                <th style="width: 10%">Ranking</th>
-                                                <th style="width: 20%">Nama Santri</th>
-                                                <th style="width: 20%">Kriteria</th>
-                                                <th style="width: 20%">Nilai Alternatif</th>
-                                                <th style="width: 20%">Nilai Normalisasi</th>
-                                                <th style="width: 20%">Nilai Normalisasi Terbobot</th>
-                                                <th style="width: 20%">Nilai Preferensi</th>
+                                                <th style="width:5%;">Ranking</th>
+                                                <th style="width:25%;">Nama Santri</th>
+                                                <th style="width:15%;">Kode Kriteria</th>
+                                                <th style="width:15%;">Nilai Santri</th>
+                                                <th style="width:15%;">Normalisasi</th>
+                                                <th style="width:15%;">Normalisasi Terbobot</th>
+                                                <th style="width:10%;">Nilai Preferensi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -114,7 +114,6 @@
                                             <?php
                                                 $no++;
                                             endwhile;
-
                                             ?>
                                         </tbody>
                                     </table>

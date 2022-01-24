@@ -1,8 +1,8 @@
         <?php include("pages/header.php"); ?>
         <?php
-            $query = "SELECT * FROM santri WHERE id_santri='$_GET[id]'";
+            $query  = "SELECT * FROM santri WHERE id_santri='$_GET[id]'";
             $tampil = mysqli_query($koneksi, $query);
-            $data = mysqli_fetch_assoc($tampil);
+            $data   = mysqli_fetch_assoc($tampil);
         ?>
         <!-- ================================================== -->
         <div class="page-wrapper">
@@ -74,17 +74,15 @@
                                 </div>
                             </form>
                             <?php
-                            if(isset($_POST['edit'])) 
-                            {
+                            if(isset($_POST['edit'])) {
                                 $query = "UPDATE santri SET
-                                            nama_santri='$_POST[nama]',
-                                            jenis_kelamin='$_POST[jenis]',
-                                            asal_sekolah='$_POST[asal]',
-                                            alamat_santri='$_POST[alamat]'
-                                          WHERE id_santri='$_GET[id]'";
+                                            nama_santri   = '$_POST[nama]',
+                                            jenis_kelamin = '$_POST[jenis]',
+                                            asal_sekolah  = '$_POST[asal]',
+                                            alamat_santri = '$_POST[alamat]'
+                                          WHERE id_santri = '$_GET[id]'";
                                 $edit = mysqli_query($koneksi, $query);
-                                if($edit)
-                                {
+                                if($edit) {
                                     echo "<script>alert('Edit data sukses!');
                                     window.location='data.php';</script>";
                                 }

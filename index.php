@@ -13,10 +13,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title">Sistem Pendukung Keputusan (SPK) dengan Metode SAW</h3>
-                        <h4 class="text-justify">
-                            Studi kasus: Pemilihan Santri Baru Pondok Pesantren Miftahussalam Banyumas.
-                        </h4>
+                        <h3 class="card-title">SPK Penerimaan Santri Baru dengan metode SAW pada Pondok Pesantren Miftahussalam Banyumas</h3>
                     </div>
                 </div>
             </div>
@@ -24,3 +21,5 @@
     </div>
 <!-- ================================================== -->
 <?php include("pages/footer.php"); ?>
+
+<!-- Developt by https://www.facebook.com/Vickry.ID -->

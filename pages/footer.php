@@ -23,3 +23,5 @@
     <script src="assets/dist/js/pages/dashboards/dashboard1.min.js"></script>
 </body>
 </html>
+
+<!-- Developt by https://www.facebook.com/Vickry.ID -->

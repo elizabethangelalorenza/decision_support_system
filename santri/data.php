@@ -31,8 +31,8 @@
                                         </thead>
                                         <tbody>
                                         <?php
-                                            $no = 1;
-                                            $query = "SELECT * FROM santri ORDER BY id_santri ASC";
+                                            $no     = 1;
+                                            $query  = "SELECT * FROM santri ORDER BY id_santri ASC";
                                             $tampil = mysqli_query($koneksi, $query);
                                             while ($data = mysqli_fetch_assoc($tampil)):
                                         ?>

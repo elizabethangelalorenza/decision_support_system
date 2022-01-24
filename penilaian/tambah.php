@@ -26,7 +26,7 @@
                                                 <select class="form-control form-control-sm" name="nama" required autofocus>
                                                     <option>Pilih Nama Santri</option>
                                                     <?php
-                                                    $query = "SELECT * FROM santri";
+                                                    $query  = "SELECT * FROM santri";
                                                     $tampil = mysqli_query($koneksi, $query);
                                                     while ($data = mysqli_fetch_assoc($tampil)) :
                                                         echo '<option value=' . $data["id_santri"] . '>' . $data["nama_santri"] . '</option>';
@@ -37,7 +37,7 @@
                                         </div>
                                     </div>
                                     <?php
-                                    $query = "SELECT * FROM kriteria";
+                                    $query  = "SELECT * FROM kriteria";
                                     $tampil = mysqli_query($koneksi, $query);
                                     while ($data = mysqli_fetch_assoc($tampil)) :
                                     ?>

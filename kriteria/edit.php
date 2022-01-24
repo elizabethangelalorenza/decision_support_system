@@ -1,8 +1,8 @@
         <?php include("pages/header.php"); ?>
         <?php
-            $query = "SELECT * FROM kriteria WHERE id_kriteria='$_GET[id]'";
+            $query  = "SELECT * FROM kriteria WHERE id_kriteria='$_GET[id]'";
             $tampil = mysqli_query($koneksi, $query);
-            $data = mysqli_fetch_assoc($tampil);
+            $data   = mysqli_fetch_assoc($tampil);
         ?>
         <!-- ================================================== -->
         <div class="page-wrapper">
@@ -74,14 +74,13 @@
                                 </div>
                             </form>
                             <?php
-                            if(isset($_POST['edit'])) 
-                            {
+                            if(isset($_POST['edit'])) {
                                 $query = "UPDATE kriteria SET
-                                            nama_kriteria='$_POST[nama]',
-                                            kode_kriteria='$_POST[kode]',
-                                            jenis_kriteria='$_POST[jenis]',
-                                            bobot_kriteria='$_POST[bobot]'
-                                          WHERE id_kriteria='$_GET[id]'";
+                                            nama_kriteria   = '$_POST[nama]',
+                                            kode_kriteria   = '$_POST[kode]',
+                                            jenis_kriteria  = '$_POST[jenis]',
+                                            bobot_kriteria  = '$_POST[bobot]'
+                                          WHERE id_kriteria = '$_GET[id]'";
                                 $edit = mysqli_query($koneksi, $query);
                                 if($edit) {
                                     echo "<script>alert('Edit data sukses!'); 

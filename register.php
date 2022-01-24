@@ -47,23 +47,20 @@
                         </div>
                     </form>
                     <?php
-                    if(isset($_POST['register']))
-                    {
-                        $nama = $_POST['nama'];
-                        $username = $_POST['username'];
-                        $password = md5($_POST['password']);
-                        $query = "INSERT INTO user (nama, username, password)
-                                  VALUES ('$nama', '$username', '$password')";
-
-                        $register = mysqli_query($koneksi, $query);
-                        
-                        if($register > 0) {
-                            echo "<script>alert('Registrasi sukses!');
-                            window.location='login.php';</script>";
-                        } else {
-                            echo "<script>alert('Registrasi gagal! Coba ulangi lagi');</script>";
+                        if(isset($_POST['register'])) {
+                            $nama  = $_POST['nama'];
+                            $username = $_POST['username'];
+                            $password = md5($_POST['password']);
+                            $query = "INSERT INTO user (nama, username, password)
+                                      VALUES ('$nama', '$username', '$password')";
+                            $register = mysqli_query($koneksi, $query);
+                            if($register > 0) {
+                                echo "<script>alert('Registrasi sukses!');
+                                window.location='login.php';</script>";
+                            } else {
+                                echo "<script>alert('Registrasi gagal! Coba ulangi lagi');</script>";
+                            }
                         }
-                    }
                     ?>
                 </div>
             </div>
@@ -78,3 +75,5 @@
 </body>
 <!-- ================================================== -->
 </html>
+
+<!-- Developt by https://www.facebook.com/Vickry.ID -->

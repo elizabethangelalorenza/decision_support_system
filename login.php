@@ -94,8 +94,7 @@
                                 </form>
                                 <!-- Config Login -->
                                 <?php
-                                if(isset($_POST['login']))
-                                {
+                                if(isset($_POST['login'])) {
                                     $username = $_POST['username'];
                                     $password = md5($_POST['password']);
                                     $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
@@ -110,9 +109,8 @@
                                 ?>
                                 <!-- Config Register -->
                                 <?php
-                                if(isset($_POST['register']))
-                                {
-                                    $nama = $_POST['nama'];
+                                if(isset($_POST['register'])) {
+                                    $nama  = $_POST['nama'];
                                     $username = $_POST['username'];
                                     $password = md5($_POST['password']);
                                     $query = "INSERT INTO user (nama, username, password)
@@ -142,3 +140,5 @@
 </body>
 <!-- ================================================== -->
 </html>
+
+<!-- Developt by https://www.facebook.com/Vickry.ID -->

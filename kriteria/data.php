@@ -31,8 +31,8 @@
                                         </thead>
                                         <tbody>
                                         <?php
-                                            $no = 1;
-                                            $query = "SELECT * FROM kriteria ORDER BY id_kriteria ASC";
+                                            $no     = 1;
+                                            $query  = "SELECT * FROM kriteria ORDER BY id_kriteria ASC";
                                             $tampil = mysqli_query($koneksi, $query);
                                             while ($data = mysqli_fetch_assoc($tampil)):
                                         ?>
