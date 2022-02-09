@@ -2,7 +2,7 @@
     include("../pages/koneksi.php");
     session_start();
     if (!isset($_SESSION['user'])) {
-        echo "<script>window.location='../login.php';</script>";
+        echo "<script>window.location='../index.php';</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Yasmiba">
     <meta name="author" content="Yasmiba">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/logo.png">
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />

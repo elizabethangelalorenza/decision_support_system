@@ -2,7 +2,7 @@
     include("pages/koneksi.php");
     session_start();
     if (!isset($_SESSION['user'])) {
-        echo "<script>window.location='login.php';</script>";
+        echo "<script>window.location='index.php';</script>";
     }
 ?>
 <!-- ================================================== -->
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Yasmiba">
     <meta name="author" content="Yasmiba">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.png">
     <link href="assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
@@ -37,9 +37,9 @@
             <nav class="navbar top-navbar navbar-expand-md">
                 <div class="navbar-header" data-logobg="skin6">
                     <div class="navbar-brand">
-                        <a href="index.php">
+                        <a href="home.php">
                             <b class="logo-icon">
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="assets/images/logo.png" alt="homepage" class="dark-logo" />
                             </b>
                             <b class="logo-text">
                                 <img src="assets/images/yasmiba.png" alt="homepage" class="dark-logo" />
@@ -70,7 +70,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
-                            <a href="index.php" class="sidebar-link sidebar-link" aria-expanded="false">
+                            <a href="home.php" class="sidebar-link sidebar-link" aria-expanded="false">
                                 <i data-feather="home" class="feather-icon"></i>
                                 <span class="hide-menu">Beranda</span>
                             </a>
